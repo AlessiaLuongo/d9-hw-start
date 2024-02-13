@@ -25,6 +25,18 @@ const Favourites = () => {
           <ListGroup>
             {favourites.map((fav, i) => (
               <ListGroupItem key={i}>
+                <Button
+                  className="me-3"
+                  variant="danger"
+                  onClick={() =>
+                    dispatch({
+                      type: "REMOVE_FROM_FAVS",
+                      payload: fav,
+                    })
+                  }
+                >
+                  Remove
+                </Button>
                 <Link to={"/" + fav}>{fav}</Link>
               </ListGroupItem>
             ))}
